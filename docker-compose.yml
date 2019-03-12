@@ -4,9 +4,11 @@ services:
     image: mysql:5.7.25
     environment:
       - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - ./tertiary.sql:/docker-entrypoint-initdb.d/tertiary.sql
   web:
     build: .
-    command: bash -c "/bin/bash"
+    command: bash -c "yarn install --check-files && /bin/bash"
     tty: true
     stdin_open: true
     volumes:
