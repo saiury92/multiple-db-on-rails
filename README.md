@@ -1,24 +1,32 @@
-# README
+## Clone source
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone with SSH: <br>
+```
+git clone git@github.com:saiury92/multiple-db-on-rails.git app/
+```
+* Clone with HTTPS: <br>
+```
+git clone https://github.com/saiury92/multiple-db-on-rails.git app/
+```
 
-Things you may want to cover:
+## The following only builds the images, does not start the containers:
+```
+cd app/ && docker-compose buid
+```
+## The following builds the images if the images do not exist and starts the containers:
+```
+cd app/ && docker-compose up
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run task migrate
+```
+docker exec -it app_web rails db:setup
+```
+## Access to rails console
+```
+docker exec -it app_web rails c
+```
+## Run rails server
+```
+docker exec -it app_web rails s
+```

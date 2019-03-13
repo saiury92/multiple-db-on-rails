@@ -8,6 +8,7 @@ services:
       - ./tertiary.sql:/docker-entrypoint-initdb.d/tertiary.sql
   web:
     build: .
+    container_name: "app_web"
     command: bash -c "yarn install --check-files && /bin/bash"
     tty: true
     stdin_open: true
