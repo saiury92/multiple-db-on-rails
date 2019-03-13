@@ -11,7 +11,7 @@ git clone https://github.com/saiury92/multiple-db-on-rails.git app/
 
 ## The following only builds the images, does not start the containers:
 ```
-cd app/ && docker-compose buid
+cd app/ && docker-compose buiLd
 ```
 ## The following builds the images if the images do not exist and starts the containers:
 ```
