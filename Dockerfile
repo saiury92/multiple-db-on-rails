@@ -27,6 +27,7 @@ WORKDIR /app
 # are made.
 COPY Gemfile Gemfile.lock ./
 COPY . ./
+RUN gem install foreman
 RUN bundle install --jobs 20 --retry 5
 
 # Expose port 3000 to the Docker host, so we can access it
