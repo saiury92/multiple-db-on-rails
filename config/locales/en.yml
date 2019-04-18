@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  posts:
+    index:
+      post_title: "Post"
+      post_title_html: "Post &#128075; &#128578;"
